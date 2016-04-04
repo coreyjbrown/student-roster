@@ -15,4 +15,16 @@ angular.module('studentRoster')
 	});
 })
 
+.factory('School', function () {
+	
+	function School(schoolInfo){
+		this.fullName = schoolInfo.fullName;
+		this.schoolId = schoolInfo._id;
+		this.nickName = schoolInfo.nickName;
+		this.grades = schoolInfo.gradesServed;
+	}
+
+	return School;
+})
+
 .value('authToken', 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczovL252LXN0dWRlbnQtYXBpLWRldi5hdXRoMC5jb20vIiwiZW1haWwiOiJ0ZXN0MmRvZUB5b3VwZC5vcmciLCJhdWQiOiJFc2tOdjN3VWF4VnppR214MzVqNVBrV3F6SlhQRU1MMCIsImlhdCI6MTQ1OTc5Njg1MywiZXhwIjoxNDU5ODMyODUzfQ.R2jInLtWEq8UM_b5UrDTAyuMBhRJ4-KQLRwvritT71g');

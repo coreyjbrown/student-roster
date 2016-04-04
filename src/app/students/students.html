@@ -2,12 +2,12 @@
 
   <h1 class="text-primary">All Students</h1>
   <br><br><br><br>
-  <div ng-repeat="student in ctrl.students">
-  	<label>Student:&nbsp</label><span ng-bind="student.studentDetails.name.lastFirst"></span>
+  <div ng-repeat="student in ctrl.myStudents">
+  	<label>Student:&nbsp</label><span ng-bind="::student.lastFirst"></span>
   	<br>
-  	<label>Student Id:&nbsp</label><span ng-bind="student.studentId"></span>
+  	<label>Student Id:&nbsp</label><span ng-bind="::student.studentId"></span>
   	<br>
-  	<label>School:&nbsp</label><span ng-bind="student.schoolDetails.schoolName"></span>
+  	<label>School:&nbsp</label><span ng-bind="student.schoolName"></span>
   	<br><br>
   </div>
 </div>

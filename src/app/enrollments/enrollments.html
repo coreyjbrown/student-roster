@@ -2,22 +2,19 @@
 
   <h1 class="text-primary">New Enrollments</h1>
   <br><br><br><br>
-  <div ng-repeat="student in ctrl.students">
-  	<label>Student:&nbsp</label><span ng-bind="student.studentDetails.name.lastFirst"></span>
+  <div ng-repeat="enrollment in ctrl.myEnrollments">
+  	<label>Student:&nbsp</label><span ng-bind="enrollment.lastFirst"></span>
   	<br>
-  	<label>Student Id:&nbsp</label><span ng-bind="student.studentId"></span>
+  	<label>Student Id:&nbsp</label><span ng-bind="enrollment.studentId"></span>
   	<br>
-  	<label>School:&nbsp</label><span ng-bind="student.schoolDetails.schoolName"></span>
+  	<label>School:&nbsp</label><span ng-bind="enrollment.schoolName"></span>
   	<br>
-  	<label>Enrollment Date:&nbsp</label><span ng-bind="student.studentDetails.admitDate"></span>
+  	<label>Enrollment Date:&nbsp</label><span ng-bind="enrollment.admitDate"></span>
   	<br>
-  	<label>Previous School:&nbsp</label><span ng-bind="student.studentDetails.sendingSchool"></span>
+  	<label>Previous School:&nbsp</label><span ng-bind="enrollment.previousSchool"></span>
   	<br>
   	<button type="button" class="btn btn-xs">Edit</button>
   	<br><br>
   </div>
-
-  <br><br><br><br>
-  <pre>{{ ctrl | json }}</pre>
 
 </div>

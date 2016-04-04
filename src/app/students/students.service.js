@@ -15,10 +15,27 @@ angular.module('studentRoster')
 	});
 })
 
-.factory('Student', function (student) {
-	this.lastFirst = student.studentDetails.name.lastFirst;
-	this.studentId = student.student.studentId;
-	this.schoolName =  student.schoolDetails.schoolName;
-	return this;
+.factory('Enrollment', function () {
+	
+	function Enrollment(enrollmentInfo){
+		this.lastFirst = enrollmentInfo.studentDetails.name.lastFirst;
+		this.studentId = enrollmentInfo.studentId;
+		this.schoolName = enrollmentInfo.schoolDetails.schoolName;
+		this.admitDate = enrollmentInfo.studentDetails.admitDate;
+		this.previousSchool = enrollmentInfo.studentDetails.sendingSchool;
+	}
+
+	return Enrollment;
+})
+
+.factory('Student', function () {
+
+	function Student(studentInfo){
+		this.lastFirst = studentInfo.studentDetails.name.lastFirst;
+		this.studentId = studentInfo.studentId;
+		this.schoolName =  studentInfo.schoolDetails.schoolName;
+
+	}
+		return Student;
 });
 

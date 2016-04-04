@@ -1,0 +1,23 @@
+<div class="container">
+
+  <h1 class="text-primary">New Enrollments</h1>
+  <br><br><br><br>
+  <div ng-repeat="student in ctrl.students">
+  	<label>Student:&nbsp</label><span ng-bind="student.studentDetails.name.lastFirst"></span>
+  	<br>
+  	<label>Student Id:&nbsp</label><span ng-bind="student.studentId"></span>
+  	<br>
+  	<label>School:&nbsp</label><span ng-bind="student.schoolDetails.schoolName"></span>
+  	<br>
+  	<label>Enrollment Date:&nbsp</label><span ng-bind="student.studentDetails.admitDate"></span>
+  	<br>
+  	<label>Previous School:&nbsp</label><span ng-bind="student.studentDetails.sendingSchool"></span>
+  	<br>
+  	<button type="button" class="btn btn-xs">Edit</button>
+  	<br><br>
+  </div>
+
+  <br><br><br><br>
+  <pre>{{ ctrl | json }}</pre>
+
+</div>

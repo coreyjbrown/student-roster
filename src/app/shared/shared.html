@@ -1,0 +1,15 @@
+<div class="container">
+
+  <h1 class="text-primary">All Schools</h1>
+  <br><br><br><br>
+  <div ng-repeat="school in ctrl.schools">
+  	<label>School Name:&nbsp</label><span ng-bind="school.fullName"></span>
+  	<br>
+  	<label>School Id:&nbsp</label><span ng-bind="school._id"></span>
+  	<br>
+  	<label>Nickname:&nbsp</label><span ng-bind="school.nickName"></span>
+  	<br>
+  	<label>Grades:&nbsp</label><span ng-bind="school.gradesServed"></span>
+  	<br><br>
+  </div>
+</div>

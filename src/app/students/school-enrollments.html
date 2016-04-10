@@ -1,0 +1,29 @@
+<div ng-repeat="enrollment in ctrl.myEnrollments">
+	<label>Student:&nbsp</label><span ng-bind="enrollment.lastFirst"></span>
+	<br>
+	<label>Student Id:&nbsp</label><span ng-bind="enrollment.studentId"></span>
+	<br>
+  <label>Birth Date:&nbsp</label><span ng-bind="enrollment.birthDate"></span>
+  <br>
+	<label>School:&nbsp</label><span ng-bind="enrollment.schoolName"></span>
+	<br>
+	<label>Enrollment Date:&nbsp</label><span ng-bind="enrollment.admitDate"></span>
+	<br>
+	<label>Previous School:&nbsp</label><span ng-bind="enrollment.previousSchool"></span>
+	<br>
+  <div ng-if="!enrollment.isEditing">
+    <label>Username:&nbsp</label><span ng-bind="enrollment.login.username"></span>
+    &nbsp &nbsp &nbsp &nbsp
+    <label>Password:&nbsp</label><span ng-bind="enrollment.login.password"></span>
+    <br>
+  </div>
+  <form ng-if="enrollment.isEditing">
+    <label>Username:</label><input type="text" ng-model="enrollment.tempLogin.username">
+    &nbsp &nbsp &nbsp &nbsp
+    <label>Password:</label><input type="password" ng-model="enrollment.tempLogin.password">
+  </form>
+	<button type="button" class="btn btn-xs btn-primary" ng-if="!enrollment.isEditing" ng-click="enrollment.editEnrollment()">Edit</button>
+  <button type="button" class="btn btn-xs btn-danger" ng-if="enrollment.isEditing" ng-click="enrollment.saveChanges()">Save</button>
+  <button type="button" class="btn btn-xs btn-default" ng-if="enrollment.isEditing" ng-click="enrollment.cancelEdit()">Cancel</button>
+	<br><br>
+</div>

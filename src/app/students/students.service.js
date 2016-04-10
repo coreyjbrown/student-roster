@@ -20,10 +20,28 @@ angular.module('studentRoster')
 	function Enrollment(enrollmentInfo){
 		this.lastFirst = enrollmentInfo.studentDetails.name.lastFirst;
 		this.studentId = enrollmentInfo.studentId;
+		this.birthDate = enrollmentInfo.studentDetails.dob;
 		this.schoolName = enrollmentInfo.schoolDetails.schoolName;
 		this.admitDate = enrollmentInfo.studentDetails.admitDate;
 		this.previousSchool = enrollmentInfo.studentDetails.sendingSchool;
+		this.isEditing = false;
 	}
+
+	Enrollment.prototype.editEnrollment = function() {
+		this.isEditing = true;
+		this.tempLogin = angular.copy(this.login);
+	};
+
+	Enrollment.prototype.cancelEdit = function() {
+		this.tempLogin = {};
+		this.isEditing = false;
+	};
+
+	Enrollment.prototype.saveChanges = function() {
+		this.login = angular.copy(this.tempLogin);
+		this.tempLogin = {};
+		this.isEditing = false;
+	};
 
 	return Enrollment;
 })
